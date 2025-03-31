@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 export interface ProfileImageProps {
   imageSrc: string;
   altText: string;
@@ -15,3 +17,9 @@ export interface CVButtonProps {
   cvUrl: string;
   buttonText?: string;
 }
+
+export interface SocialMediaPlatform {
+    name: string;
+    url: string;
+    icon: ReactNode;
+  }

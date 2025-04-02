@@ -1,6 +1,5 @@
 import React, { useState, ChangeEvent, FormEvent } from "react";
 
-// Define interfaces for our form data and errors
 interface FormData {
   name: string;
   email: string;
@@ -15,6 +14,7 @@ interface FormErrors {
   message?: string;
 }
 
+//make it horizontal
 const ContactForm: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
     name: "",
@@ -65,7 +65,6 @@ const ContactForm: React.FC = () => {
     setIsSubmitting(true);
     setErrors({});
 
-    // Simulate form submission
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitStatus("success");
@@ -76,7 +75,6 @@ const ContactForm: React.FC = () => {
         message: "",
       });
 
-      // Reset success message after 5 seconds
       setTimeout(() => {
         setSubmitStatus(null);
       }, 5000);

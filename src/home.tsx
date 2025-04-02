@@ -5,6 +5,7 @@ import TechCarousel from "./components/tech-carousel";
 import { socialMedia } from "./data/info-data";
 
 //todo move this to the app, since no other page, don't really need this
+//todo move the titles to the left
 const Home = () => {
   return (
     <>
@@ -22,10 +23,6 @@ const Home = () => {
           <h2 className="section-title text-2xl font-bold mb-6 text-center">
             My Tech Stack
           </h2>
-          <p className="text-center mb-8">
-            These are the technologies I work with
-          </p>
-
           <TechCarousel />
         </div>
       </section>

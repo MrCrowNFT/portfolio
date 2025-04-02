@@ -8,6 +8,7 @@ const TechCarousel: React.FC = () => {
     const calculateDuration = () => {
       if (!slideTrackRef.current) return;
 
+      //todo make the reset seemless, i gets a weird glich animation when the carousel finishes
       // Calculate animation duration based on content width
       const trackWidth = slideTrackRef.current.offsetWidth;
       const duration = trackWidth / 100; // Speed factor -> up for change

@@ -10,7 +10,7 @@ const TechCarousel: React.FC = () => {
 
       // Calculate animation duration based on content width
       const trackWidth = slideTrackRef.current.offsetWidth;
-      const duration = trackWidth / 100; // Speed factor
+      const duration = trackWidth / 100; // Speed factor -> up for change
 
       document.documentElement.style.setProperty(
         "--marquee-duration",
@@ -25,54 +25,42 @@ const TechCarousel: React.FC = () => {
 
   return (
     <div className="tech-carousel relative w-full overflow-hidden h-20 bg-opacity-10 my-8">
-      <style jsx>{`
-        @keyframes marquee {
-          0% {
-            transform: translateX(0);
+      <style>{`
+          @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
           }
-          100% {
-            transform: translateX(-50%);
+          
+          .marquee-track {
+            animation: marquee var(--marquee-duration, 30s) linear infinite;
           }
-        }
-
-        .marquee-track {
-          animation: marquee var(--marquee-duration, 30s) linear infinite;
-        }
-
-        /* Optional: Pause animation on hover */
-        .tech-carousel:hover .marquee-track {
-          animation-play-state: paused;
-        }
-
-        /* Gradient overlays to fade edges */
-        .fade-overlay-left {
-          position: absolute;
-          top: 0;
-          left: 0;
-          height: 100%;
-          width: 50px;
-          background: linear-gradient(
-            to right,
-            var(--bg-color, #ffffff) 0%,
-            transparent 100%
-          );
-          z-index: 2;
-        }
-
-        .fade-overlay-right {
-          position: absolute;
-          top: 0;
-          right: 0;
-          height: 100%;
-          width: 50px;
-          background: linear-gradient(
-            to left,
-            var(--bg-color, #ffffff) 0%,
-            transparent 100%
-          );
-          z-index: 2;
-        }
-      `}</style>
+          
+          /* Optional: Pause animation on hover */
+          .tech-carousel:hover .marquee-track {
+            animation-play-state: paused;
+          }
+          
+          /* Gradient overlays to fade edges */
+          .fade-overlay-left {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 50px;
+            background: linear-gradient(to right, var(--bg-color, #ffffff) 0%, transparent 100%);
+            z-index: 2;
+          }
+          
+          .fade-overlay-right {
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 50px;
+            background: linear-gradient(to left, var(--bg-color, #ffffff) 0%, transparent 100%);
+            z-index: 2;
+          }
+        `}</style>
 
       {/* Fade overlays */}
       <div className="fade-overlay-left"></div>
@@ -97,7 +85,7 @@ const TechCarousel: React.FC = () => {
           </div>
         ))}
 
-        {/* Duplicate for seamless loop */}
+        {/* Duplicate for seamless loop ->recomended by ai */}
         {technologies.map((tech, index) => (
           <div
             key={`dup-${index}`}

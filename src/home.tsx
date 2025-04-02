@@ -17,7 +17,18 @@ const Home = () => {
         />
       </div>
       <ProjectSection />
-      <TechCarousel />
+      <section className="skills-section py-12">
+        <div className="container mx-auto px-4">
+          <h2 className="section-title text-2xl font-bold mb-6 text-center">
+            My Tech Stack
+          </h2>
+          <p className="text-center mb-8">
+            These are the technologies I work with
+          </p>
+
+          <TechCarousel />
+        </div>
+      </section>
       <ContactForm />
     </>
   );

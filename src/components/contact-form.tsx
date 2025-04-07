@@ -1,8 +1,9 @@
 import React, { useState, ChangeEvent, FormEvent } from "react";
 import { FormData, FormErrors } from "../types/contact";
 
-//make it horizontal
 const ContactForm: React.FC = () => {
+  const FORMSPREE_URL = "https://formspree.io/f/mblgpqlb";
+
   const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
@@ -40,7 +41,7 @@ const ContactForm: React.FC = () => {
     });
   };
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault();
     const newErrors = validate();
 
@@ -52,7 +53,19 @@ const ContactForm: React.FC = () => {
     setIsSubmitting(true);
     setErrors({});
 
-    setTimeout(() => {
+    try {
+      const response = await fetch(FORMSPREE_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Server responded with an error");
+      }
+
       setIsSubmitting(false);
       setSubmitStatus("success");
       setFormData({
@@ -65,7 +78,15 @@ const ContactForm: React.FC = () => {
       setTimeout(() => {
         setSubmitStatus(null);
       }, 5000);
-    }, 1500);
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setIsSubmitting(false);
+      setSubmitStatus("error");
+
+      setTimeout(() => {
+        setSubmitStatus(null);
+      }, 5000);
+    }
   };
 
   return (
@@ -75,6 +96,12 @@ const ContactForm: React.FC = () => {
       {submitStatus === "success" && (
         <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded">
           Thank you for your message! I'll get back to you soon.
+        </div>
+      )}
+
+      {submitStatus === "error" && (
+        <div className="mb-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded">
+          Oops! Something went wrong. Please try again later.
         </div>
       )}
 

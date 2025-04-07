@@ -1,18 +1,5 @@
 import React, { useState, ChangeEvent, FormEvent } from "react";
-
-interface FormData {
-  name: string;
-  email: string;
-  subject: string;
-  message: string;
-}
-
-interface FormErrors {
-  name?: string;
-  email?: string;
-  subject?: string;
-  message?: string;
-}
+import { FormData, FormErrors } from "../types/contact";
 
 //make it horizontal
 const ContactForm: React.FC = () => {

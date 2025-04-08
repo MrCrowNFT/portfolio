@@ -1,1 +1,118 @@
 @import "tailwindcss";
+
+/*Base styles and variables */
+:root {
+  --primary: #0a192f;
+  --secondary: #64ffda;
+  --bg-dark: #112240;
+  --text-primary: #e6f1ff;
+  --text-secondary: #8892b0;
+  --dark-text: #333333;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --border-radius: 6px;
+}
+
+/* Global styles */
+body {
+  font-family: "Inter", "Roboto", sans-serif;
+  background-color: var(--primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Poppins", sans-serif;
+  margin-top: 0;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+h2 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+p {
+  margin-bottom: var(--spacing-md);
+  color: var(--text-secondary);
+}
+
+a {
+  color: var(--secondary);
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+button,
+.button {
+  background-color: transparent;
+  border: 1px solid var(--secondary);
+  color: var(--secondary);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-radius: var(--border-radius);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button:hover,
+.button:hover {
+  background-color: rgba(100, 255, 218, 0.1);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+/* Section styles */
+section {
+  padding: var(--spacing-xl) 0;
+}
+
+.section-title {
+  position: relative;
+  margin-bottom: var(--spacing-xl);
+  color: var(--text-primary);
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background-color: var(--secondary);
+}
+
+/* Makes section titles centered when they are centered */
+.text-center.section-title::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Dark section alternating pattern */
+.bg-dark {
+  background-color: var(--bg-dark);
+}

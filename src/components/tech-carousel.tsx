@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { technologies } from "../data/tech-data";
+import "../styles/carousel.css";
 
 const TechCarousel: React.FC = () => {
   const slideTrackRef = useRef<HTMLDivElement>(null);

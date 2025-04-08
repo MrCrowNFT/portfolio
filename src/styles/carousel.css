@@ -1,0 +1,126 @@
+:root {
+  --primary: #0a192f; /* Deep navy blue */
+  --secondary: #64ffda; /* Teal/cyan accent */
+  --bg-dark: #112240; /* Dark slate background */
+  --text-primary: #e6f1ff; /* White text for dark backgrounds */
+  --text-secondary: #8892b0; /* Light gray for secondary text */
+}
+
+/* Update CSS variables for the carousel */
+.tech-carousel {
+  --bg-color: var(--primary); /* For the fade overlays */
+}
+
+.bg-dark .tech-carousel {
+  --bg-color: var(--bg-dark); /* For the fade overlays in dark sections */
+}
+
+/* Tech carousel container */
+.tech-carousel.relative.w-full.overflow-hidden.h-20.bg-opacity-10.my-8 {
+  height: 100px;
+  margin: 2rem 0;
+  background-color: rgba(255, 255, 255, 0.02);
+  border-radius: 6px;
+  position: relative;
+}
+
+/* Marquee track */
+.marquee-track.flex.justify-around.items-center {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0;
+}
+
+/* Technology item */
+.tech-item.flex.flex-col.items-center.justify-center.px-6 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1.5rem;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.tech-item.flex.flex-col.items-center.justify-center.px-6:hover {
+  transform: translateY(-5px);
+  filter: brightness(1.2);
+}
+
+/* Technology logo */
+.tech-logo.w-10.h-10.flex.items-center.justify-center.text-2xl {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
+  margin-bottom: 0.5rem;
+}
+
+.tech-item:hover .tech-logo {
+  color: var(--secondary);
+}
+
+/* Technology name */
+.tech-name.text-xs.mt-1.font-medium {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.tech-item:hover .tech-name {
+  color: var(--text-primary);
+}
+
+/* Fade overlays */
+.fade-overlay-left,
+.fade-overlay-right {
+  background: linear-gradient(to right, var(--bg-color) 0%, transparent 100%);
+  width: 80px;
+}
+
+.fade-overlay-right {
+  background: linear-gradient(to left, var(--bg-color) 0%, transparent 100%);
+}
+
+/* Additional custom styles for technology categories */
+/* You can add these classes to your technology items if you want to color-code them */
+.tech-item.frontend .tech-logo {
+  color: #61dafb; /* React blue */
+}
+
+.tech-item.backend .tech-logo {
+  color: #68a063; /* Node green */
+}
+
+.tech-item.database .tech-logo {
+  color: #4479a1; /* MySQL blue */
+}
+
+.tech-item.language .tech-logo {
+  color: #f0db4f; /* JavaScript yellow */
+}
+
+/* Animation refinement to make it smoother */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Add this for a smoother restart */
+.marquee-track {
+  animation: marquee var(--marquee-duration, 30s) linear infinite;
+  will-change: transform;
+}
+
+/* Optional: Fix for the glitch - add backface-visibility */
+.marquee-track {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}

@@ -5,6 +5,7 @@ import InfoSection from "./components/info-section";
 import ProjectSection from "./components/projects-section";
 import TechCarousel from "./components/tech-carousel";
 import { socialMedia } from "./data/info-data";
+import Img from "./assets/Luciano.png";
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
         <section className="hero-section py-12">
           <div className="container mx-auto p-4">
             <InfoSection
-              imageSrc="/path/to/your/image.jpg"
+              imageSrc={Img}
               altText="Luciano profile picture"
               platforms={socialMedia}
               cvUrl="/path/to/your/resume.pdf"

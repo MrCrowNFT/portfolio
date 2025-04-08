@@ -4,6 +4,7 @@ import {
   SocialMediaProps,
   CVButtonProps,
 } from "../types/info";
+import "../styles/info-section.css";
 
 const InfoSection: React.FC<
   ProfileImageProps & SocialMediaProps & CVButtonProps

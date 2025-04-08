@@ -1,23 +1,17 @@
 @import "tailwindcss";
 
-/*Base styles and variables */
 :root {
-  --primary: #0a192f;
-  --secondary: #64ffda;
-  --bg-dark: #112240;
-  --text-primary: #e6f1ff;
-  --text-secondary: #8892b0;
-  --dark-text: #333333;
-  --spacing-sm: 8px;
-  --spacing-md: 16px;
-  --spacing-lg: 24px;
-  --spacing-xl: 32px;
-  --border-radius: 6px;
+  --primary: #0a192f; /* Deep navy blue */
+  --secondary: #64ffda; /* Teal/cyan accent */
+  --bg-dark: #112240; /* Dark slate background */
+  --text-primary: #e6f1ff; /* White text for dark backgrounds */
+  --text-secondary: #8892b0; /* Light gray for secondary text */
+  --dark-text: #333333; /* Dark text for light backgrounds */
 }
 
-/* Global styles */
+/* Base styles */
 body {
-  font-family: "Inter", "Roboto", sans-serif;
+  font-family: "Inter", "Roboto", -apple-system, BlinkMacSystemFont, sans-serif;
   background-color: var(--primary);
   color: var(--text-primary);
   line-height: 1.6;
@@ -25,31 +19,33 @@ body {
   padding: 0;
 }
 
+/* Typography */
 h1,
 h2,
 h3,
 h4,
-h5 {
-  font-family: "Poppins", sans-serif;
-  margin-top: 0;
+h5,
+h6 {
+  color: var(--text-primary);
+  font-weight: 600;
+  line-height: 1.2;
 }
 
 h1 {
   font-size: 2.5rem;
-  font-weight: 700;
 }
+
 h2 {
   font-size: 2rem;
-  font-weight: 600;
 }
+
 h3 {
   font-size: 1.5rem;
-  font-weight: 600;
 }
 
 p {
-  margin-bottom: var(--spacing-md);
   color: var(--text-secondary);
+  margin-bottom: 1rem;
 }
 
 a {
@@ -62,13 +58,56 @@ a:hover {
   opacity: 0.8;
 }
 
+/* Container */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Sections */
+section {
+  padding: 4rem 0;
+}
+
+/* Alternating section backgrounds */
+section:nth-child(even) {
+  background-color: var(--bg-dark);
+}
+
+/* Generic section title styling */
+.section-title {
+  position: relative;
+  margin-bottom: 2.5rem;
+  color: var(--text-primary);
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background-color: var(--secondary);
+}
+
+.text-center.section-title::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Buttons */
 button,
 .button {
   background-color: transparent;
   border: 1px solid var(--secondary);
   color: var(--secondary);
-  padding: var(--spacing-sm) var(--spacing-lg);
-  border-radius: var(--border-radius);
+  padding: 0.5rem 1.5rem;
+  border-radius: 4px;
   font-size: 0.9rem;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -79,40 +118,42 @@ button:hover,
   background-color: rgba(100, 255, 218, 0.1);
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 var(--spacing-md);
-}
-
-/* Section styles */
-section {
-  padding: var(--spacing-xl) 0;
-}
-
-.section-title {
-  position: relative;
-  margin-bottom: var(--spacing-xl);
+/* Utilities */
+.text-primary {
   color: var(--text-primary);
 }
 
-.section-title::after {
-  content: "";
-  position: absolute;
-  bottom: -8px;
-  left: 0;
-  width: 60px;
-  height: 3px;
-  background-color: var(--secondary);
+.text-secondary {
+  color: var(--text-secondary);
 }
 
-/* Makes section titles centered when they are centered */
-.text-center.section-title::after {
-  left: 50%;
-  transform: translateX(-50%);
+.text-accent {
+  color: var(--secondary);
 }
 
-/* Dark section alternating pattern */
+.bg-primary {
+  background-color: var(--primary);
+}
+
 .bg-dark {
   background-color: var(--bg-dark);
+}
+
+/* Responsive utilities */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  section {
+    padding: 3rem 0;
+  }
 }

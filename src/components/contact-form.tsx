@@ -1,5 +1,6 @@
 import React, { useState, ChangeEvent, FormEvent } from "react";
 import { FormData, FormErrors } from "../types/contact";
+import "../styles/contact-form.css"
 
 const ContactForm: React.FC = () => {
   const FORMSPREE_URL = "https://formspree.io/f/mblgpqlb";

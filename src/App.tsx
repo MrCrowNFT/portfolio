@@ -1,4 +1,5 @@
 import "./App.css";
+import "./styles/global.css";
 import ContactForm from "./components/contact-form";
 import InfoSection from "./components/info-section";
 import ProjectSection from "./components/projects-section";

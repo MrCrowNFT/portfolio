@@ -1,0 +1,113 @@
+:root {
+  --primary: #0a192f; /* Deep navy blue */
+  --secondary: #64ffda; /* Teal/cyan accent */
+  --bg-dark: #112240; /* Dark slate background */
+  --bg-card: #1a2f4e; /* Slightly lighter than bg-dark for cards */
+  --text-primary: #e6f1ff; /* White text for dark backgrounds */
+  --text-secondary: #8892b0; /* Light gray for secondary text */
+}
+
+/* Project Card */
+.project-card.rounded-lg.overflow-hidden.shadow-md.hover\:shadow-xl.transition-shadow.duration-300.flex.flex-col.h-full {
+  background-color: var(--primary);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+}
+
+.project-card.rounded-lg.overflow-hidden.shadow-md.hover\:shadow-xl.transition-shadow.duration-300.flex.flex-col.h-full:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+}
+
+/* Project Image Container */
+.project-image-container.relative.pb-\[56\.25\%\].overflow-hidden {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  overflow: hidden;
+}
+
+.project-image.absolute.top-0.left-0.w-full.h-full.object-cover {
+  transition: transform 0.5s ease;
+  filter: brightness(0.85);
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.05);
+  filter: brightness(1);
+}
+
+/* Content Container */
+.p-6.flex.flex-col.flex-grow {
+  padding: 1.5rem;
+  background-color: var(--primary);
+}
+
+/* Project Title */
+.project-title.text-xl.font-bold.mb-3 {
+  color: var(--text-primary);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  position: relative;
+  display: inline-block;
+}
+
+.project-title.text-xl.font-bold.mb-3::after {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 2px;
+  background-color: var(--secondary);
+  bottom: -6px;
+  left: 0;
+}
+
+/* Project Description */
+.project-description.mb-4.flex-grow {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Technology Tags */
+.technology-tags.flex.flex-wrap.gap-2.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
+.tech-tag.px-3.py-1.text-sm.rounded-full.border.inline-block {
+  background-color: rgba(100, 255, 218, 0.1);
+  border: 1px solid var(--secondary);
+  color: var(--secondary);
+  font-size: 0.75rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+}
+
+/* Project Links */
+.project-links.flex.gap-4.mt-auto {
+  margin-top: 1rem;
+}
+
+.project-link.github-link.flex.items-center.gap-2.px-4.py-2.rounded-lg.font-medium.transition-all.duration-200.flex-grow.text-center.justify-center,
+.project-link.live-link.flex.items-center.gap-2.px-4.py-2.rounded-lg.font-medium.transition-all.duration-200.flex-grow.text-center.justify-center {
+  color: var(--text-secondary);
+  border: 1px solid var(--text-secondary);
+  transition: border-color 0.2s ease, color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.project-link.github-link.flex.items-center.gap-2.px-4.py-2.rounded-lg.font-medium.transition-all.duration-200.flex-grow.text-center.justify-center:hover,
+.project-link.live-link.flex.items-center.gap-2.px-4.py-2.rounded-lg.font-medium.transition-all.duration-200.flex-grow.text-center.justify-center:hover {
+  color: var(--secondary);
+  border-color: var(--secondary);
+  background-color: rgba(100, 255, 218, 0.05);
+}
+
+.link-icon.w-5.h-5 {
+  transition: transform 0.2s ease;
+}
+
+.project-link:hover .link-icon {
+  transform: translateY(-2px);
+}

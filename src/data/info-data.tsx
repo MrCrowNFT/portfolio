@@ -11,17 +11,17 @@ export const Info = {
 export const socialMedia: SocialMediaPlatform[] = [
   {
     name: "GitHub",
-    url: "https://github.com/",
+    url: "https://github.com/MrCrowNFT",
     icon: <FaGithub />,
   },
   {
     name: "Twitter",
-    url: "https://twitter.com/",
+    url: "https://x.com/MrCrowNFT",
     icon: <FaTwitter />,
   },
   {
     name: "LinkedIn",
-    url: "https://linkedin.com/in/",
+    url: "https://www.linkedin.com/in/luciano-balladares-mrcrow/",
     icon: <FaLinkedin />,
   },
 ];

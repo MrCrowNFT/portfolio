@@ -1,6 +1,7 @@
 :root {
   --primary: #0a192f; /* Deep navy blue */
   --secondary: #64ffda; /* Teal/cyan accent */
+  --accent-orange: #ff7e5f; /* Orange accent for "In Progress" */
   --bg-dark: #112240; /* Dark slate background */
   --bg-card: #1a2f4e; /* Slightly lighter than bg-dark for cards */
   --text-primary: #e6f1ff; /* White text for dark backgrounds */
@@ -44,16 +45,15 @@
 }
 
 /* Project Title */
-.project-title.text-xl.font-bold.mb-3 {
+.project-title.text-xl.font-bold {
   color: var(--text-primary);
   font-size: 1.25rem;
   font-weight: 700;
-  margin-bottom: 0.75rem;
   position: relative;
   display: inline-block;
 }
 
-.project-title.text-xl.font-bold.mb-3::after {
+.project-title.text-xl.font-bold::after {
   content: "";
   position: absolute;
   width: 40px;
@@ -61,6 +61,14 @@
   background-color: var(--secondary);
   bottom: -6px;
   left: 0;
+}
+
+/* In Progress Badge */
+.in-progress-badge {
+  background-color: rgba(255, 126, 95, 0.15);
+  color: var(--accent-orange);
+  font-weight: 600;
+  border: 1px solid var(--accent-orange);
 }
 
 /* Project Description */
@@ -82,6 +90,14 @@
   font-size: 0.75rem;
   padding: 0.25rem 0.75rem;
   border-radius: 9999px;
+}
+
+/* In Progress Tag Styling */
+.tech-tag-in-progress {
+  background-color: rgba(255, 126, 95, 0.15) !important;
+  border: 1px solid var(--accent-orange) !important;
+  color: var(--accent-orange) !important;
+  font-weight: 600;
 }
 
 /* Project Links */

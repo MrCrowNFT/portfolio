@@ -23,3 +23,4 @@ export interface SocialMediaPlatform {
     url: string;
     icon: ReactNode;
   }
+

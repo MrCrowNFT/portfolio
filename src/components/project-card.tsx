@@ -7,9 +7,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   const { gifUrl, title, description, technologies, githubUrl, liveUrl } =
     project;
 
+  // Check if the project is in progress
+  const isInProgress = technologies.includes("In Progress");
+
   return (
     <div className="project-card rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col h-full">
-      {/* Project GIF/Image - 16:9 aspect ratio container */}
+      {/* Project GIF/Image */}
       <div className="project-image-container relative pb-[56.25%] overflow-hidden">
         <img
           src={gifUrl}
@@ -20,8 +23,15 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
 
       {/* Content Container */}
       <div className="p-6 flex flex-col flex-grow">
-        {/* Project Title */}
-        <h3 className="project-title text-xl font-bold mb-3">{title}</h3>
+        {/* In Progress indicator */}
+        <div className="flex items-center mb-3">
+          <h3 className="project-title text-xl font-bold">{title}</h3>
+          {isInProgress && (
+            <span className="in-progress-badge ml-2 px-2 py-1 text-xs rounded-md">
+              In Progress
+            </span>
+          )}
+        </div>
 
         {/* Project Description */}
         <p className="project-description mb-4 flex-grow">{description}</p>
@@ -31,14 +41,16 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           {technologies.map((tech, index) => (
             <span
               key={index}
-              className="tech-tag px-3 py-1 text-sm rounded-full border inline-block"
+              className={`tech-tag px-3 py-1 text-sm rounded-full border inline-block ${
+                tech === "In Progress" ? "tech-tag-in-progress" : ""
+              }`}
             >
               {tech}
             </span>
           ))}
         </div>
 
-        {/* Link Buttons - only shown if URLs are provided */}
+        {/* Link Buttons -> only shown if URLs are provided */}
         <div className="project-links flex gap-4 mt-auto">
           {githubUrl && (
             <a

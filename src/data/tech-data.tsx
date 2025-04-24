@@ -8,6 +8,7 @@ import {
   FaCss3Alt,
   FaDocker,
 } from "react-icons/fa";
+import { FaGolang } from "react-icons/fa6";
 
 import {
   SiTypescript,
@@ -55,6 +56,11 @@ export const technologies: Technology[] = [
   {
     name: "Python",
     icon: <FaPython />,
+    category: "language",
+  },
+  {
+    name: "Golang",
+    icon: <FaGolang />,
     category: "language",
   },
 

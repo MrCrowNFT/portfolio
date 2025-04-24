@@ -1,36 +1,71 @@
 import { Project } from "../types/project";
 
-//example data
-//todo add my projects
 const projects: Project[] = [
   {
     id: 1,
-    title: "E-Commerce Dashboard",
-    gifUrl: "/path/to/ecommerce-dashboard.gif",
+    title: "Soulsync",
+    gifUrl: "",
     description:
-      "A comprehensive dashboard for e-commerce analytics, featuring real-time data visualization and customizable reports.",
-    technologies: ["React", "Node.js", "Chart.js", "Express", "MongoDB"],
-    githubUrl: "https://github.com/yourusername/ecommerce-dashboard",
-    liveUrl: "https://ecommerce-dashboard-demo.com",
+      "Soulsync is a mental health and wellness AI-powered app designed to give users a supportive conversational companion available 24/7.",
+    technologies: [
+      "JavaScript",
+      "TypeScript",
+      "React",
+      "Node.js",
+      "Chart.js",
+      "Express",
+      "MongoDB",
+      "OpenAI API",
+      "Compromise",
+      "Sentiment",
+      "Framer Motion",
+      "Tailwind",
+      "JWT",
+      "Jest",
+    ],
+    githubUrl: "https://github.com/MrCrowNFT/soulsync",
+    liveUrl: "https://soulsync-zeta.vercel.app/",
   },
   {
     id: 2,
-    title: "Weather App",
-    gifUrl: "/path/to/weather-app.gif",
+    title: "Hiredge",
+    gifUrl: "",
     description:
-      "A weather application that provides current conditions and forecasts based on user location or search.",
-    technologies: ["JavaScript", "HTML5", "CSS3", "OpenWeather API"],
-    githubUrl: "https://github.com/yourusername/weather-app",
-    // No liveUrl provided, so the Live Demo button won't appear
+      "Hiredge AI is an AI-powered resume analysis tool. It uses the OpenAI API to analyze and improve uploaded resumes, in order to assist job seekers in refining their resumes for better job search outcomes.",
+    technologies: [
+      "Django",
+      "Python",
+      "HTML",
+      "Tailwind",
+      "sqlite3",
+      "OpenAI API",
+      "PyPDF2",
+    ],
+    githubUrl: "https://github.com/MrCrowNFT/hiredge-ai",
   },
   {
     id: 3,
-    title: "Portfolio Website",
-    gifUrl: "/path/to/portfolio.gif",
-    description: "Personal portfolio website showcasing projects and skills.",
-    technologies: ["React", "Tailwind CSS", "Framer Motion"],
-    // No githubUrl provided, so the GitHub button won't appear
-    liveUrl: "https://yourportfolio.com",
+    title: "The Geek Shop",
+    gifUrl: "",
+    description:
+      "The Geek Shop is a full-stack e-commerce platform with role-based admin dashboard, JWT authentication, dark mode, cart management with Zustand, and protected routes. Still in progress with testing, TypeScript migration, and styling updates.",
+    technologies: [
+      "In Progress",
+      "JavaScript",
+      "React",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Tailwind",
+      "Zustand",
+      "Axios",
+      "JWT",
+      "Jest",
+      "Stripe",
+
+      "ShadCN/UI",
+    ],
+    githubUrl: "https://github.com/MrCrowNFT/the-geek-shop",
   },
 ];
 

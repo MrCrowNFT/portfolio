@@ -7,7 +7,6 @@ export const Info = {
     "Self-taught software developer passionate about building scalable web apps. I specialize in backend development with Node.js and AI-powered applications.",
 };
 
-//todo update this
 export const socialMedia: SocialMediaPlatform[] = [
   {
     name: "GitHub",
@@ -21,7 +20,7 @@ export const socialMedia: SocialMediaPlatform[] = [
   },
   {
     name: "LinkedIn",
-    url: "https://www.linkedin.com/in/luciano-balladares-mrcrow/",
+    url: "https://www.linkedin.com/in/luciano-balladares/",
     icon: <FaLinkedin />,
   },
 ];

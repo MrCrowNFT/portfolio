@@ -1,10 +1,11 @@
 import { Project } from "../types/project";
+import SoulSyncDemo from "./SoulSyncDemo.gif"
 
 const projects: Project[] = [
   {
     id: 1,
     title: "Soulsync",
-    gifUrl: "",
+    gifUrl: SoulSyncDemo,
     description:
       "Soulsync is a mental health and wellness AI-powered app designed to give users a supportive conversational companion available 24/7.",
     technologies: [
@@ -42,6 +43,7 @@ const projects: Project[] = [
       "PyPDF2",
     ],
     githubUrl: "https://github.com/MrCrowNFT/hiredge-ai",
+    liveUrl: "https://hiredge-ai.onrender.com",
   },
   {
     id: 3,

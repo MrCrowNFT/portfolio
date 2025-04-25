@@ -18,6 +18,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           src={gifUrl}
           alt={`${title} preview`}
           className="project-image absolute top-0 left-0 w-full h-full object-cover"
+          loading="lazy" 
         />
       </div>
 
@@ -63,7 +64,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
               <span>GitHub</span>
             </a>
           )}
-
           {liveUrl && (
             <a
               href={liveUrl}

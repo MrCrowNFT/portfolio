@@ -1,5 +1,6 @@
 import { Project } from "../types/project";
-import SoulSyncDemo from "./SoulSyncDemo.gif"
+import SoulSyncDemo from "./SoulSyncDemo.gif";
+import HiredgeDemo from "./HiredgeDemo.gif";
 
 const projects: Project[] = [
   {
@@ -30,7 +31,7 @@ const projects: Project[] = [
   {
     id: 2,
     title: "Hiredge",
-    gifUrl: "",
+    gifUrl: HiredgeDemo,
     description:
       "Hiredge AI is an AI-powered resume analysis tool. It uses the OpenAI API to analyze and improve uploaded resumes, in order to assist job seekers in refining their resumes for better job search outcomes.",
     technologies: [

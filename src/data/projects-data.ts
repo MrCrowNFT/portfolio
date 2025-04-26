@@ -1,6 +1,7 @@
 import { Project } from "../types/project";
 import SoulSyncDemo from "./SoulSyncDemo.gif";
 import HiredgeDemo from "./HiredgeDemo.gif";
+import TGS from "./TGSScreenshot.png";
 
 const projects: Project[] = [
   {
@@ -49,7 +50,7 @@ const projects: Project[] = [
   {
     id: 3,
     title: "The Geek Shop",
-    gifUrl: "",
+    gifUrl: TGS,
     description:
       "The Geek Shop is a full-stack e-commerce platform with role-based admin dashboard, JWT authentication, dark mode, cart management with Zustand, and protected routes. Still in progress with testing, TypeScript migration, and styling updates.",
     technologies: [

@@ -21,7 +21,7 @@ const InfoSection: React.FC<
           />
         </div>
 
-        {/* Social Media Icons - Centered */}
+        {/* Social Media Icons */}
         <div className="flex gap-5 justify-center">
           {platforms.map((platform) => (
             <a
@@ -43,7 +43,7 @@ const InfoSection: React.FC<
         <h1 className="text-4xl font-bold text-center md:text-left">{Info.title}</h1>
         <p className="text-xl text-center md:text-left">{Info.introduction}</p>
 
-        {/* CV Download Button - Centered */}
+        {/* CV Download Button */}
         <div className="mt-6 w-full flex justify-center md:justify-start">
           <a
             href={cvUrl}

@@ -106,13 +106,11 @@ section {
   background-color: var(--secondary);
 }
 
-/* Makes section titles centered when they are centered */
 .text-center.section-title::after {
   left: 50%;
   transform: translateX(-50%);
 }
 
-/* Dark section alternating pattern */
 .bg-dark {
   background-color: var(--bg-dark);
 }

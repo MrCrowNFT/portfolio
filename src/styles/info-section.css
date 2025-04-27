@@ -12,7 +12,7 @@
   --border-radius: 6px;
 }
 
-/* Updated InfoSection styling to match your existing HTML structure */
+
 section.flex.flex-col.md\:flex-row.gap-6.items-start {
   padding: var(--spacing-xl) 0;
 }

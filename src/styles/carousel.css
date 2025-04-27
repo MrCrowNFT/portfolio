@@ -6,16 +6,16 @@
   --text-secondary: #8892b0; /* Light gray for secondary text */
 }
 
-/* Update CSS variables for the carousel */
+
 .tech-carousel {
   --bg-color: var(--primary); /* For the fade overlays */
 }
 
 .bg-dark .tech-carousel {
-  --bg-color: var(--bg-dark); /* For the fade overlays in dark sections */
+  --bg-color: var(--bg-dark); 
 }
 
-/* Tech carousel container */
+
 .tech-carousel.relative.w-full.overflow-hidden.h-20.bg-opacity-10.my-8 {
   height: 100px;
   margin: 2rem 0;
@@ -24,14 +24,14 @@
   position: relative;
 }
 
-/* Marquee track */
+
 .marquee-track.flex.justify-around.items-center {
   display: flex;
   align-items: center;
   padding: 0.5rem 0;
 }
 
-/* Technology item */
+
 .tech-item.flex.flex-col.items-center.justify-center.px-6 {
   display: flex;
   flex-direction: column;
@@ -46,7 +46,7 @@
   filter: brightness(1.2);
 }
 
-/* Technology logo */
+
 .tech-logo.w-10.h-10.flex.items-center.justify-center.text-2xl {
   width: 2.5rem;
   height: 2.5rem;
@@ -85,8 +85,6 @@
   background: linear-gradient(to left, var(--bg-color) 0%, transparent 100%);
 }
 
-/* Additional custom styles for technology categories */
-/* You can add these classes to your technology items if you want to color-code them */
 .tech-item.frontend .tech-logo {
   color: #61dafb; /* React blue */
 }
@@ -113,13 +111,12 @@
   }
 }
 
-/* Add this for a smoother restart */
 .marquee-track {
   animation: marquee var(--marquee-duration, 30s) linear infinite;
   will-change: transform;
 }
 
-/* Optional: Fix for the glitch - add backface-visibility */
+/* add backface-visibility */
 .marquee-track {
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;

@@ -6,30 +6,29 @@ import ProjectSection from "./components/projects-section";
 import TechCarousel from "./components/tech-carousel";
 import { socialMedia } from "./data/info-data";
 import Img from "./assets/Luciano.png";
+import cv from "./data/Luciano_cv.pdf"
 
 function App() {
   return (
     <div className="portfolio-app">
       <header className="py-4">
-        <div className="container mx-auto">
-          {/* You might want to add a navigation component here */}
-        </div>
+        <div className="container mx-auto"></div>
       </header>
 
       <main>
-        {/* Hero/Info Section */}
+        {/* Info Section */}
         <section className="hero-section py-12">
           <div className="container mx-auto p-4">
             <InfoSection
               imageSrc={Img}
               altText="Luciano profile picture"
               platforms={socialMedia}
-              cvUrl="/path/to/your/resume.pdf"
+              cvUrl={cv}
             />
           </div>
         </section>
 
-        {/* Projects Section with darker background */}
+        {/* Projects Section */}
         <section className="bg-dark">
           <ProjectSection />
         </section>
@@ -44,7 +43,7 @@ function App() {
           </div>
         </section>
 
-        {/* Contact Section with darker background */}
+        {/* Contact Section */}
         <section className="bg-dark">
           <div className="container mx-auto">
             <ContactForm />

@@ -7,6 +7,7 @@ import {
   FaHtml5,
   FaCss3Alt,
   FaDocker,
+  FaAws,
 } from "react-icons/fa";
 import { FaGolang } from "react-icons/fa6";
 
@@ -32,7 +33,8 @@ export type TechCategory =
   | "testing"
   | "devops"
   | "payment"
-  | "auth";
+  | "auth"
+  | "cloud";
 
 export interface Technology {
   name: string;
@@ -139,6 +141,12 @@ export const technologies: Technology[] = [
     name: "Stripe",
     icon: <SiStripe />,
     category: "payment",
+  },
+
+  {
+    name: "AWS S3",
+    icon: <FaAws />,
+    category: "cloud",
   },
 ];
 

@@ -6,10 +6,24 @@ import {
 } from "../types/info";
 import "../styles/info-section.css";
 
-//todo make email link a mailto
 const InfoSection: React.FC<
   ProfileImageProps & SocialMediaProps & CVButtonProps
 > = ({ imageSrc, altText, platforms, cvUrl, buttonText = "Download CV" }) => {
+  // helper function to determine if URL is an email
+  const isEmail = (url: string) => {
+    return url.includes("@") && !url.startsWith("http");
+  };
+
+  // helper function to format the href
+  const getHref = (url: string) => {
+    return isEmail(url) ? `mailto:${url}` : url;
+  };
+
+  // helper function to determine target attribute
+  const getTarget = (url: string) => {
+    return isEmail(url) ? "_self" : "_blank";
+  };
+
   return (
     <section className="flex flex-col md:flex-row justify-center items-center gap-16 py-6 mx-auto">
       <div className="flex flex-col gap-5 items-center">
@@ -27,9 +41,9 @@ const InfoSection: React.FC<
           {platforms.map((platform) => (
             <a
               key={platform.name}
-              href={platform.url}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={getHref(platform.url)}
+              target={getTarget(platform.url)}
+              rel={isEmail(platform.url) ? undefined : "noopener noreferrer"}
               className="text-2xl hover:opacity-80 transition-opacity"
               aria-label={platform.name}
             >
@@ -39,14 +53,14 @@ const InfoSection: React.FC<
         </div>
       </div>
 
-      {/* Text Content */}
+      {/* text Content */}
       <div className="flex flex-col gap-4 max-w-lg items-center md:items-start">
         <h1 className="text-4xl font-bold text-center md:text-left">
           {Info.title}
         </h1>
         <p className="text-xl text-center md:text-left">{Info.introduction}</p>
 
-        {/* CV Download Button */}
+        {/* CV download Button */}
         <div className="mt-6 w-full flex justify-center md:justify-start">
           <a
             href={cvUrl}

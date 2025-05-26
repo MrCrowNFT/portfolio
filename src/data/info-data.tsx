@@ -5,7 +5,7 @@ import { SocialMediaPlatform } from "../types/info";
 export const Info = {
   title: "Hey, I’m Luciano",
   introduction:
-    "From the analytical precision of a medical laboratory to the creative logic of software development, I build technology with a human-centric approach. I am a full-stack developer with a passion for the backend, where I specialize in building intelligent, AI-powered applications. My goal is to leverage technologies like Node.js, Python, and AI to create scalable and impactful solutions.",
+    "From medical science to software development, I apply analytical precision to building human-centric applications. I specialize in crafting scalable backend systems and intelligent, AI-powered solutions with Node.js and Python.",
 };
 
 export const socialMedia: SocialMediaPlatform[] = [

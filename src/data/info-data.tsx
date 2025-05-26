@@ -1,4 +1,5 @@
 import { FaGithub, FaTwitter, FaLinkedin } from "react-icons/fa";
+import { CiMail } from "react-icons/ci";
 import { SocialMediaPlatform } from "../types/info";
 
 export const Info = {
@@ -22,5 +23,10 @@ export const socialMedia: SocialMediaPlatform[] = [
     name: "LinkedIn",
     url: "https://www.linkedin.com/in/luciano-balladares/",
     icon: <FaLinkedin />,
+  },
+  {
+    name: "Email",
+    url: "luciano.b.dev@gmail.com",
+    icon: <CiMail />,
   },
 ];

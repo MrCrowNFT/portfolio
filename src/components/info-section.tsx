@@ -6,6 +6,7 @@ import {
 } from "../types/info";
 import "../styles/info-section.css";
 
+//todo make email link a mailto
 const InfoSection: React.FC<
   ProfileImageProps & SocialMediaProps & CVButtonProps
 > = ({ imageSrc, altText, platforms, cvUrl, buttonText = "Download CV" }) => {
@@ -40,7 +41,9 @@ const InfoSection: React.FC<
 
       {/* Text Content */}
       <div className="flex flex-col gap-4 max-w-lg items-center md:items-start">
-        <h1 className="text-4xl font-bold text-center md:text-left">{Info.title}</h1>
+        <h1 className="text-4xl font-bold text-center md:text-left">
+          {Info.title}
+        </h1>
         <p className="text-xl text-center md:text-left">{Info.introduction}</p>
 
         {/* CV Download Button */}

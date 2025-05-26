@@ -25,6 +25,7 @@ const projects: Project[] = [
       "Tailwind",
       "JWT",
       "Jest",
+      "RAG",
     ],
     githubUrl: "https://github.com/MrCrowNFT/soulsync",
     liveUrl: "https://soulsync-zeta.vercel.app/",
@@ -66,7 +67,7 @@ const projects: Project[] = [
       "JWT",
       "Jest",
       "Stripe",
-
+      "AWS S3",
       "ShadCN/UI",
     ],
     githubUrl: "https://github.com/MrCrowNFT/the-geek-shop",
